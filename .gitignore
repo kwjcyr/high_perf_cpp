@@ -1,0 +1,43 @@
+# CMake 构建目录
+cmake-build-*/
+build/
+*/build/
+
+# 编译产物
+*.o
+*.so
+*.a
+*.dylib
+*.dll
+*.exe
+
+# 可执行文件
+memory_pool
+thread_pool
+lock_free_queue
+async_logger
+reactor_demo
+downloader
+db_pool
+double_buffer
+leak_detector
+
+# IDE 配置
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
