@@ -13,10 +13,9 @@ int main() {
     LockFreeQueue<int> queue;
 
     // 测试 1：单线程基本操作
-    std::cout << "=== Test 1: Single Thread Operations ===\n";wu su
     for (int i = 0; i < 1000; ++i) {
         queue.enqueue(i);
-    }usuw
+    }
     std::cout << std::format("Enqueued 1000 items, size: {}\n", queue.size());
 
     int count = 0;

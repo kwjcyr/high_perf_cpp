@@ -94,6 +94,84 @@ make async_logger && ./async_logger
 make reactor_demo && ./reactor_demo
 ```
 
+### 运行所有测试用例
+
+#### 方式一：逐个运行
+
+```bash
+cd build
+
+# 1. 内存池测试
+./memory_pool
+
+# 2. 线程池测试
+./thread_pool
+
+# 3. 无锁队列测试
+./lock_free_queue
+
+# 4. 异步日志测试
+./async_logger
+
+# 5. Reactor 网络库测试
+./reactor_demo
+
+# 6. 多线程下载器测试
+./downloader
+
+# 7. 数据库连接池测试
+./db_pool
+
+# 8. 双缓冲测试
+./double_buffer
+```
+
+#### 方式二：一键运行所有测试
+
+**Linux/macOS:**
+
+```bash
+cd build
+
+# 使用 for 循环运行所有测试
+for exe in memory_pool thread_pool lock_free_queue async_logger reactor_demo downloader db_pool double_buffer; do
+    echo -e "\n\n>>> Running $exe <<<"
+    ./$exe
+    echo -e "\n"
+done
+```
+
+**或者使用一行命令:**
+
+```bash
+cd build && for exe in memory_pool thread_pool lock_free_queue async_logger reactor_demo downloader db_pool double_buffer; do echo ">>> $exe" && ./$exe && echo ""; done
+```
+
+**Windows (PowerShell):**
+
+```powershell
+cd build
+$exes = @("memory_pool", "thread_pool", "lock_free_queue", "async_logger", "reactor_demo", "downloader", "db_pool", "double_buffer")
+foreach ($exe in $exes) {
+    Write-Host "`n`n>>> Running $exe <<<`n"
+    ./$exe
+    Write-Host "`n"
+}
+```
+
+#### 预期输出示例
+
+每个测试用例会输出详细的结果和性能统计：
+
+- **memory_pool**: 内存分配/释放统计、性能对比
+- **thread_pool**: 任务执行情况、线程数量变化、Future 结果
+- **lock_free_queue**: 吞吐量（ops/sec）、并发测试结果
+- **async_logger**: 日志写入性能统计
+- **reactor_demo**: 事件处理统计
+- **downloader**: 下载进度、速度显示
+- **db_pool**: 连接池统计、SQL 执行日志
+- **double_buffer**: 缓冲区交换性能（吞吐量可达 5500 万 ops/sec）
+
 ---
 
 ## 📖 组件详解
