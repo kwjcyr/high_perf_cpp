@@ -11,17 +11,6 @@ build/
 *.dll
 *.exe
 
-# 可执行文件
-memory_pool
-thread_pool
-lock_free_queue
-async_logger
-reactor_demo
-downloader
-db_pool
-double_buffer
-leak_detector
-
 # IDE 配置
 .idea/
 .vscode/
